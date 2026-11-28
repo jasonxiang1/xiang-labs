@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Monogram from '../components/Monogram.astro';
+
+const year = new Date().getFullYear();
+---
+
+<Layout>
+  <div class="page">
+    <header class="masthead">
+      <a class="brand" href="/" aria-label="Xiang Labs home">
+        <Monogram class="brand-mark" />
+        <span>xiang<span class="brand-dash">—</span>labs</span>
+      </a>
+      <span class="domain">jasonxiang.com</span>
+    </header>
+
+    <main id="main">
+      <section class="introduction" aria-labelledby="name">
+        <h1 id="name">Jason Xiang<span class="period">.</span></h1>
+        <div class="work">
+          <article class="venture" aria-labelledby="b2w-title">
+            <span class="eyebrow">Xiang Labs</span>
+            <h2 id="b2w-title">B2W</h2>
+            <p class="venture-description">AI agents</p>
+            <a class="venture-link" href="https://www.b2w-ai.com/" target="_blank" rel="noopener noreferrer" aria-label="Explore B2W (opens in a new tab)">
+              <span>Explore B2W</span>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14" stroke="currentColor" stroke-width="1.5" /></svg>
+            </a>
+          </article>
+          <div class="artwork" aria-hidden="true">
+            <Monogram class="hero-mark" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© {year} Xiang Labs</span>
+      <a href="https://www.b2w-ai.com/" target="_blank" rel="noopener noreferrer" aria-label="b2w-ai.com (opens in a new tab)">b2w-ai.com <span aria-hidden="true">↗</span></a>
+    </footer>
+  </div>
+</Layout>

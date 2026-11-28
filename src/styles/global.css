@@ -1,0 +1,104 @@
+:root {
+  color-scheme: light;
+  --paper: #f7f1e8;
+  --ink: #25231f;
+  --accent: #a4482d;
+  --muted: #6f655b;
+  --line: #c7b9a9;
+  --serif: 'Bodoni Moda Variable', 'Bodoni MT', 'Didot', serif;
+  --sans: 'DM Sans Variable', system-ui, sans-serif;
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--paper);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: inherit; text-decoration: none; }
+::selection { background: #dfbda8; color: var(--ink); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 7px; border-radius: 2px; }
+
+.page {
+  width: min(100% - 112px, 1440px);
+  min-height: 100svh;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.masthead {
+  min-height: 112px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand { display: inline-flex; align-items: center; gap: 15px; }
+.brand > span { font: 550 36px/1 var(--serif); letter-spacing: -1.8px; }
+.brand-dash { letter-spacing: -5px; margin-right: 3px; }
+.brand-mark { width: 47px; height: 47px; color: var(--accent); }
+.domain { font: 400 21px/1.4 var(--serif); }
+
+main { flex: 1; display: grid; align-content: center; }
+.introduction { padding-block: clamp(42px, 6vh, 80px) 48px; }
+h1 { margin: 0; font: 500 clamp(88px, 13.4vw, 206px)/1.1 var(--serif); letter-spacing: -0.075em; }
+.period { color: var(--accent); margin-left: 0.015em; }
+.work { display: grid; grid-template-columns: 1.6fr 1fr; align-items: end; gap: 32px; margin-top: 52px; }
+.venture { background: #efe5d9; border-radius: 4px; padding: 36px 42px 38px; }
+.eyebrow { display: block; color: var(--accent); font-size: 12px; line-height: 1.5; text-transform: uppercase; letter-spacing: 0.18em; }
+h2 { font: 500 clamp(58px, 6vw, 84px)/1.1 var(--serif); letter-spacing: -0.04em; margin: 14px 0 5px; }
+.venture-description { margin: 0; color: var(--muted); font-size: 19px; line-height: 1.6; }
+.venture-link { color: var(--accent); display: inline-flex; align-items: center; gap: 16px; margin-top: 30px; font-size: 19px; line-height: 1.5; }
+.venture-link > span { text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 6px; transition: text-decoration-color 180ms ease; }
+.venture-link svg { width: 20px; height: 20px; transition: transform 180ms ease; }
+.venture-link:hover > span { text-decoration-color: currentColor; }
+.venture-link:hover svg { transform: translate(2px, -2px); }
+.artwork { display: grid; place-items: center; align-self: stretch; }
+.hero-mark { width: min(100%, 370px); height: auto; color: #c88b70; opacity: 0.64; transform: rotate(-5deg); }
+.footer { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 78px; border-top: 1px solid var(--line); font-size: 13px; }
+.footer a { color: var(--muted); }
+.footer a:hover { color: var(--accent); }
+.footer a span { margin-left: 8px; }
+
+@media (min-width: 1800px) {
+  h1 { font-size: 220px; }
+}
+
+@media (max-width: 900px) {
+  .page { width: calc(100% - 64px); }
+  .masthead { min-height: 96px; }
+  .brand > span { font-size: 30px; }
+  .domain { font-size: 17px; }
+  .brand-mark { width: 38px; height: 38px; }
+  h1 { font-size: clamp(76px, 13.4vw, 120px); }
+  .work { gap: 24px; margin-top: 44px; grid-template-columns: 1.6fr 1fr; }
+  .venture { padding: 30px; }
+}
+
+@media (max-width: 600px) {
+  .page { width: calc(100% - 40px); }
+  .masthead { min-height: 88px; gap: 12px; }
+  .brand { gap: 9px; }
+  .brand > span { font-size: 27px; letter-spacing: -1.3px; }
+  .brand-mark { width: 34px; height: 34px; }
+  .domain { font-family: var(--sans); font-size: 11px; }
+  .introduction { padding-block: 52px 38px; }
+  h1 { max-width: 100%; font-size: clamp(59px, 14vw, 84px); letter-spacing: -0.075em; white-space: nowrap; }
+  .work { position: relative; display: block; margin-top: 42px; padding-top: 118px; }
+  .artwork { position: absolute; top: -14px; right: 9px; width: 135px; pointer-events: none; }
+  .hero-mark { width: 100%; }
+  .venture { position: relative; padding: 28px; }
+  h2 { font-size: 64px; }
+  .venture-description { font-size: 17px; }
+  .venture-link { font-size: 17px; margin-top: 28px; }
+  .footer { min-height: 74px; font-size: 11px; gap: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; }
+}
